@@ -37,6 +37,41 @@ pip install torch --index-url https://download.pytorch.org/whl/cu118
 pip install llama-cpp-python
 ```
 
+## Platform Support
+
+Farlow is designed to run on **Windows**, **Linux**, and **macOS**.
+
+### Windows
+- **CLI**: Runs in PowerShell, Command Prompt, or Git Bash.
+- **Paths**: Configuration stored in `%USERPROFILE%\.farlow`.
+- **GPU**: Requires CUDA toolkit for NVIDIA GPU support.
+
+### Linux
+- **CLI**: Runs in Bash, Zsh, etc.
+- **Paths**: Configuration stored in `~/.farlow`.
+- **GPU**: Native CUDA support usually works out of the box with PyTorch.
+
+### macOS
+- **CLI**: Runs in Terminal, iTerm2.
+- **Paths**: Configuration stored in `~/.farlow`.
+- **Silicon (M1/M2/M3)**: Supported via `MPS` (Metal Performance Shaders) in PyTorch (ensure you install the correct torch version).
+
+## Building Standalone Executables
+
+You can build a standalone executable for your current platform (no Python installation required for the end user).
+
+1. Install dependencies:
+   ```bash
+   pip install .
+   ```
+
+2. Run the build script:
+   ```bash
+   python build.py
+   ```
+
+3. Find your executable in `dist/<os>/farlow`.
+
 ## Usage
 
 ### 1. Pull a Model
