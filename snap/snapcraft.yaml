@@ -1,0 +1,32 @@
+name: farlow
+base: core22
+version: '0.1.0'
+summary: Open-source, CLI-first conversational AI platform
+description: |
+  Farlow is an open-source, CLI-first conversational AI platform designed to run 
+  Hugging Face and other open-weight models with zero vendor lock-in.
+
+grade: devel # Change to 'stable' for release
+confinement: strict # Use 'classic' if you need arbitrary file access
+
+parts:
+  farlow:
+    plugin: python
+    source: .
+    python-packages:
+      - .
+    build-packages:
+      - python3-pip
+      - python3-venv
+    stage-packages:
+      - python3-venv
+      - python3-tk
+
+apps:
+  farlow:
+    command: bin/farlow
+    plugs:
+      - network
+      - network-bind
+      - home
+      - removable-media

@@ -72,6 +72,24 @@ You can build a standalone executable for your current platform (no Python insta
 
 3. Find your executable in `dist/<os>/farlow`.
 
+## Installation via Snap (Linux)
+
+Once published, you can install Farlow via Snap:
+
+```bash
+sudo snap install farlow
+```
+
+To build the snap locally:
+
+```bash
+# Install snapcraft
+sudo snap install snapcraft --classic
+
+# Build
+snapcraft
+```
+
 ## Usage
 
 ### 1. Pull a Model
