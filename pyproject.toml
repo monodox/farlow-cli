@@ -1,0 +1,31 @@
+[project]
+name = "farlow"
+version = "0.1.0"
+description = "Open-source, CLI-first conversational AI platform"
+authors = [
+    {name = "Your Name", email = "your.email@example.com"},
+]
+dependencies = [
+    "typer>=0.9.0",
+    "rich>=13.0.0",
+    "pydantic>=2.0.0",
+    "requests>=2.31.0",
+    "llama-cpp-python>=0.2.0",
+    "transformers>=4.30.0",
+    "torch>=2.0.0",
+    "fastapi>=0.100.0",
+    "uvicorn>=0.22.0",
+]
+requires-python = ">=3.8"
+readme = "README.md"
+license = {text = "MIT"}
+
+[project.scripts]
+farlow = "farlow.cli:app"
+
+[build-system]
+requires = ["pdm-backend"]
+build-backend = "pdm.backend"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
